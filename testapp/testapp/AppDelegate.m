@@ -8,17 +8,22 @@
 
 #import "AppDelegate.h"
 #import "startViewController.h"
+#import "sendViewController.h"
 
 @implementation AppDelegate
+@synthesize SendViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [FBLoginView class];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
     startViewController *viewController = [[startViewController alloc]initWithNibName:@"startViewController" bundle:nil];
     UINavigationController *navCon=[[UINavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navCon;
+    self.SendViewController=[[sendViewController alloc] initWithNibName:@"SendViewController" bundle:nil];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "vkLoginViewController.h"
+#import "sendViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 @class vkLoginViewController;
+@class sendViewController;
 
 @interface startViewController : UIViewController
 - (IBAction)vkButtonAct:(id)sender;
 - (IBAction)fbButtonAct:(id)sender;
+- (IBAction)CountButtonAct:(id)sender;
 @property(strong,nonatomic)vkLoginViewController *VkLoginViewController;
+@property sendViewController *
+    SendViewController;
 @end

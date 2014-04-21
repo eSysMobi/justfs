@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-
+#import "sendViewController.h"
+@class sendViewController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@property (strong,nonatomic) sendViewController *SendViewController;
 @property (strong, nonatomic) UIWindow *window;
 @property(nonatomic) int flag;
 @property(nonatomic) int flagLeng;

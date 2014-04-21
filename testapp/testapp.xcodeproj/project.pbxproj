@@ -27,6 +27,8 @@
 		4004A7B21901237600409DCB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4004A7B11901237600409DCB /* CoreLocation.framework */; };
 		406CFB8E19012AA0009F6EBA /* button-vk.png in Resources */ = {isa = PBXBuildFile; fileRef = 406CFB8D19012AA0009F6EBA /* button-vk.png */; };
 		406CFB901905104F009F6EBA /* vk_button_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 406CFB8F1905104F009F6EBA /* vk_button_medium.png */; };
+		406CFB97190515B6009F6EBA /* sendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 406CFB95190515B6009F6EBA /* sendViewController.m */; };
+		406CFB98190515B6009F6EBA /* sendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406CFB96190515B6009F6EBA /* sendViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		4004A7B11901237600409DCB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		406CFB8D19012AA0009F6EBA /* button-vk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-vk.png"; sourceTree = "<group>"; };
 		406CFB8F1905104F009F6EBA /* vk_button_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vk_button_medium.png; sourceTree = "<group>"; };
+		406CFB94190515B6009F6EBA /* sendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendViewController.h; sourceTree = "<group>"; };
+		406CFB95190515B6009F6EBA /* sendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendViewController.m; sourceTree = "<group>"; };
+		406CFB96190515B6009F6EBA /* sendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sendViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +143,9 @@
 				4004A7A418FFF9D600409DCB /* startViewController.xib */,
 				4004A78218FFF99900409DCB /* AppDelegate.h */,
 				4004A78318FFF99900409DCB /* AppDelegate.m */,
+				406CFB94190515B6009F6EBA /* sendViewController.h */,
+				406CFB95190515B6009F6EBA /* sendViewController.m */,
+				406CFB96190515B6009F6EBA /* sendViewController.xib */,
 				406CFB8F1905104F009F6EBA /* vk_button_medium.png */,
 				4004A78518FFF99900409DCB /* Images.xcassets */,
 				4004A77A18FFF99900409DCB /* Supporting Files */,
@@ -252,6 +260,7 @@
 				4004A7A618FFF9D600409DCB /* startViewController.xib in Resources */,
 				4004A77E18FFF99900409DCB /* InfoPlist.strings in Resources */,
 				4004A78618FFF99900409DCB /* Images.xcassets in Resources */,
+				406CFB98190515B6009F6EBA /* sendViewController.xib in Resources */,
 				406CFB8E19012AA0009F6EBA /* button-vk.png in Resources */,
 				4004A7AB1900010900409DCB /* vkLoginViewController.xib in Resources */,
 				406CFB901905104F009F6EBA /* vk_button_medium.png in Resources */,
@@ -273,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				406CFB97190515B6009F6EBA /* sendViewController.m in Sources */,
 				4004A7A518FFF9D600409DCB /* startViewController.m in Sources */,
 				4004A78418FFF99900409DCB /* AppDelegate.m in Sources */,
 				4004A78018FFF99900409DCB /* main.m in Sources */,

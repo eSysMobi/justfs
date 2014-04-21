@@ -69,6 +69,8 @@
     //[self sendText];
 }
 
+
+
 - (void)sendImageAction{
     NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessUserId"];
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"];

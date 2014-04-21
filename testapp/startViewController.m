@@ -52,6 +52,11 @@
 //    [self.view addSubview:loginView];
 }
 
+- (IBAction)CountButtonAct:(id)sender {
+    self.SendViewController =[[sendViewController alloc] initWithNibName:@"sendViewController" bundle:nil];
+    [self.navigationController pushViewController:self.SendViewController animated:YES];
+}
+
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
     NSString *alertMessage, *alertTitle;
     
