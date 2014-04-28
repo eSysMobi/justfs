@@ -65,73 +65,73 @@
         NSLog(@"Error: %@", vkWebView.request.URL.absoluteString);
  
     }
-    [self sendImageAction];
+    //[self sendImageAction];
     //[self sendText];
 }
 
 
 
-- (void)sendImageAction{
-    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessUserId"];
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"];
-    
-    // Этап 1
-    if ([accessToken length]>7){
-    NSString *getWallUploadServer = [NSString stringWithFormat:@"https://api.vk.com/method/photos.getWallUploadServer?owner_id=%@&access_token=%@", user_id, accessToken];
-    
-    NSDictionary *uploadServer = [self sendRequest:getWallUploadServer withCaptcha:NO];
-   // NSLog(@"uploadserver=%@",uploadServer);
-    // Получаем ссылку для загрузки изображения
-    NSString *upload_url = [[uploadServer objectForKey:@"response"] objectForKey:@"upload_url"];
-    // Этап 2
-    // Преобразуем изображение в NSData
-    NSString * documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSString *file = [NSString stringWithFormat:@"%i.%@", appDelegate.flag, @"png"];
-   // NSLog(@"file=%@",file);
-    UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", documentsDirectoryPath, file]];
-   // NSLog(@"%@",[NSString stringWithFormat:@"%@/%@", documentsDirectoryPath, file]);
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
-    NSDictionary *postDictionary = [self sendPOSTRequest:upload_url withImageData:imageData];
-    
-    // Из полученного ответа берем hash, photo, server
-    NSString *hash = [postDictionary objectForKey:@"hash"];
-    NSString *photo = [postDictionary objectForKey:@"photo"];
-    NSString *server = [postDictionary objectForKey:@"server"];
-    // Этап 3
-    // Создаем запрос на сохранение фото на сервере вконтакте, в ответ получим id фото
-    NSString *saveWallPhoto = [NSString stringWithFormat:@"https://api.vk.com/method/photos.saveWallPhoto?owner_id=%@&access_token=%@&server=%@&photo=%@&hash=%@", user_id, accessToken,server,photo,hash];
-    NSLog(@"accesToken=%@",accessToken);
-    saveWallPhoto = [saveWallPhoto stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSData *jsondata=[NSData dataWithContentsOfURL:[NSURL URLWithString:saveWallPhoto]];
-//    NSLog(@"%@",jsondata);
-//    NSLog(@"savewallphoto=%@",saveWallPhoto);
-    NSDictionary *saveWallPhotoDict = [self sendRequest:saveWallPhoto withCaptcha:NO];
-   // NSLog(@"saveWallPhotoDict=%@",saveWallPhotoDict);
-    NSDictionary *photoDict = [[saveWallPhotoDict objectForKey:@"response"] lastObject];
-   // NSLog(@"PhotoDict=%@",photoDict);
-//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:saveWallPhoto]
-//                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-//                                                       timeoutInterval:60.0];
+//- (void)sendImageAction{
+//    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessUserId"];
+//    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"];
 //    
-//    // Для простоты используется обычный запрос NSURLConnection, ответ сервера сохраняем в NSData
-//    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-//    NSLog(@"responsedata=%@",responseData);
-//    //NSData *jsondata=[NSData dataWithContentsOfURL:[NSURL URLWithString:saveWallPhoto]];
-//    NSDictionary *photoDict = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
-//    NSLog(@"photoDict=%@",photoDict);
-//    NSDictionary *photoDict2 = [[photoDict objectForKey:@"response"] lastObject];
-    NSString *photoId = [photoDict objectForKey:@"id"];
-    NSString *postToWallLink = [NSString stringWithFormat:@"https://api.vk.com/method/wall.post?owner_id=%@&access_token=%@&message=%@&attachment=%@", user_id, accessToken, [self URLEncodedString:@"Motivate Me"], photoId];
-   // NSLog(@"posttowalllink=%@",postToWallLink);
-    NSDictionary *postToWallDict = [self sendRequest:postToWallLink withCaptcha:NO];
-    NSString *errorMsg = [[postToWallDict  objectForKey:@"error"] objectForKey:@"error_msg"];
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
-    label.backgroundColor=[UIColor whiteColor];
-    [self.view addSubview:label];
-    UIAlertView *aw = [[UIAlertView alloc] initWithTitle:@"" message:@"Картинка успешно размещена" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [aw show];}
-}
+//    // Этап 1
+//    if ([accessToken length]>7){
+//    NSString *getWallUploadServer = [NSString stringWithFormat:@"https://api.vk.com/method/photos.getWallUploadServer?owner_id=%@&access_token=%@", user_id, accessToken];
+//    
+//    NSDictionary *uploadServer = [self sendRequest:getWallUploadServer withCaptcha:NO];
+//   // NSLog(@"uploadserver=%@",uploadServer);
+//    // Получаем ссылку для загрузки изображения
+//    NSString *upload_url = [[uploadServer objectForKey:@"response"] objectForKey:@"upload_url"];
+//    // Этап 2
+//    // Преобразуем изображение в NSData
+//    NSString * documentsDirectoryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    NSString *file = [NSString stringWithFormat:@"%i.%@", appDelegate.flag, @"png"];
+//   // NSLog(@"file=%@",file);
+//    UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", documentsDirectoryPath, file]];
+//   // NSLog(@"%@",[NSString stringWithFormat:@"%@/%@", documentsDirectoryPath, file]);
+//    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+//    NSDictionary *postDictionary = [self sendPOSTRequest:upload_url withImageData:imageData];
+//    
+//    // Из полученного ответа берем hash, photo, server
+//    NSString *hash = [postDictionary objectForKey:@"hash"];
+//    NSString *photo = [postDictionary objectForKey:@"photo"];
+//    NSString *server = [postDictionary objectForKey:@"server"];
+//    // Этап 3
+//    // Создаем запрос на сохранение фото на сервере вконтакте, в ответ получим id фото
+//    NSString *saveWallPhoto = [NSString stringWithFormat:@"https://api.vk.com/method/photos.saveWallPhoto?owner_id=%@&access_token=%@&server=%@&photo=%@&hash=%@", user_id, accessToken,server,photo,hash];
+//    NSLog(@"accesToken=%@",accessToken);
+//    saveWallPhoto = [saveWallPhoto stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+////    NSData *jsondata=[NSData dataWithContentsOfURL:[NSURL URLWithString:saveWallPhoto]];
+////    NSLog(@"%@",jsondata);
+////    NSLog(@"savewallphoto=%@",saveWallPhoto);
+//    NSDictionary *saveWallPhotoDict = [self sendRequest:saveWallPhoto withCaptcha:NO];
+//   // NSLog(@"saveWallPhotoDict=%@",saveWallPhotoDict);
+//    NSDictionary *photoDict = [[saveWallPhotoDict objectForKey:@"response"] lastObject];
+//   // NSLog(@"PhotoDict=%@",photoDict);
+////    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:saveWallPhoto]
+////                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+////                                                       timeoutInterval:60.0];
+////    
+////    // Для простоты используется обычный запрос NSURLConnection, ответ сервера сохраняем в NSData
+////    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+////    NSLog(@"responsedata=%@",responseData);
+////    //NSData *jsondata=[NSData dataWithContentsOfURL:[NSURL URLWithString:saveWallPhoto]];
+////    NSDictionary *photoDict = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
+////    NSLog(@"photoDict=%@",photoDict);
+////    NSDictionary *photoDict2 = [[photoDict objectForKey:@"response"] lastObject];
+//    NSString *photoId = [photoDict objectForKey:@"id"];
+//    NSString *postToWallLink = [NSString stringWithFormat:@"https://api.vk.com/method/wall.post?owner_id=%@&access_token=%@&message=%@&attachment=%@", user_id, accessToken, [self URLEncodedString:@"Motivate Me"], photoId];
+//   // NSLog(@"posttowalllink=%@",postToWallLink);
+//    NSDictionary *postToWallDict = [self sendRequest:postToWallLink withCaptcha:NO];
+//    NSString *errorMsg = [[postToWallDict  objectForKey:@"error"] objectForKey:@"error_msg"];
+//    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
+//    label.backgroundColor=[UIColor whiteColor];
+//    [self.view addSubview:label];
+//    UIAlertView *aw = [[UIAlertView alloc] initWithTitle:@"" message:@"Картинка успешно размещена" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [aw show];}
+//}
 
 - (void)alertView:(UIAlertView *)alertView
 didDismissWithButtonIndex:(NSInteger) buttonIndex

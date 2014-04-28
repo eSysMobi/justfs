@@ -25,7 +25,6 @@
 		4004A7AB1900010900409DCB /* vkLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4004A7A91900010900409DCB /* vkLoginViewController.xib */; };
 		4004A7B0190122AC00409DCB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4004A7AF190122AC00409DCB /* FacebookSDK.framework */; };
 		4004A7B21901237600409DCB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4004A7B11901237600409DCB /* CoreLocation.framework */; };
-		406CFB8E19012AA0009F6EBA /* button-vk.png in Resources */ = {isa = PBXBuildFile; fileRef = 406CFB8D19012AA0009F6EBA /* button-vk.png */; };
 		406CFB901905104F009F6EBA /* vk_button_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 406CFB8F1905104F009F6EBA /* vk_button_medium.png */; };
 		406CFB97190515B6009F6EBA /* sendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 406CFB95190515B6009F6EBA /* sendViewController.m */; };
 		406CFB98190515B6009F6EBA /* sendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406CFB96190515B6009F6EBA /* sendViewController.xib */; };
@@ -66,7 +65,6 @@
 		4004A7A91900010900409DCB /* vkLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = vkLoginViewController.xib; path = ../vkLoginViewController.xib; sourceTree = "<group>"; };
 		4004A7AF190122AC00409DCB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		4004A7B11901237600409DCB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		406CFB8D19012AA0009F6EBA /* button-vk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-vk.png"; sourceTree = "<group>"; };
 		406CFB8F1905104F009F6EBA /* vk_button_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vk_button_medium.png; sourceTree = "<group>"; };
 		406CFB94190515B6009F6EBA /* sendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendViewController.h; sourceTree = "<group>"; };
 		406CFB95190515B6009F6EBA /* sendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendViewController.m; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				4004A79218FFF99900409DCB /* testappTests */,
 				4004A77218FFF99900409DCB /* Frameworks */,
 				4004A77118FFF99900409DCB /* Products */,
-				406CFB8D19012AA0009F6EBA /* button-vk.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,7 +258,6 @@
 				4004A77E18FFF99900409DCB /* InfoPlist.strings in Resources */,
 				4004A78618FFF99900409DCB /* Images.xcassets in Resources */,
 				406CFB98190515B6009F6EBA /* sendViewController.xib in Resources */,
-				406CFB8E19012AA0009F6EBA /* button-vk.png in Resources */,
 				4004A7AB1900010900409DCB /* vkLoginViewController.xib in Resources */,
 				406CFB901905104F009F6EBA /* vk_button_medium.png in Resources */,
 			);
