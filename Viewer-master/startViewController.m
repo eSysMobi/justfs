@@ -59,7 +59,7 @@
 }
 
 - (IBAction)libButtonAct:(id)sender {
-    self.libraryViewController =[[LibraryViewController alloc] initWithNibName:@"LibraryViewController" bundle:nil];
+    self.libraryViewController =[[LibraryViewController alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:self.libraryViewController animated:YES];}
 
 

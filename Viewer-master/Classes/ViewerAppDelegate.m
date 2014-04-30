@@ -44,7 +44,7 @@
 	UIWindow *mainWindow; // Main App Window
 
 	//LibraryViewController *rootViewController;
-    LibraryViewController *libraryViewControler;
+    LibraryViewController *libraryViewController;
 	DirectoryWatcher *directoryWatcher;
 
 	NSTimer *directoryWatcherTimer;
@@ -129,7 +129,7 @@
 
 	mainWindow.backgroundColor = [UIColor grayColor]; // Neutral gray window background color
 
-	//rootViewController = [[LibraryViewController alloc] initWithNibName:nil bundle:nil]; // Root
+	libraryViewController = [[LibraryViewController alloc] initWithNibName:nil bundle:nil]; // Root
 
 	mainWindow.rootViewController = navCon; // Set the root view controller
 

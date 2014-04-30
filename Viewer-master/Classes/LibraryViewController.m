@@ -209,7 +209,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated
+
 {
+    self.navigationController.navigationBar.hidden = YES;
 	[super viewWillAppear:animated];
 
 	if (CGSizeEqualToSize(lastAppearSize, CGSizeZero) == false)
