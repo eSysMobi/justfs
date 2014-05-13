@@ -40,19 +40,6 @@
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.example.${PRODUCT_NAME:rfc1034identifier}</string>
-	<key>FacebookDisplayName</key>
-	<string>testapp</string>
-	<key>FacebookAppID</key>
-	<string>310883612397455</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb310883612397455</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -63,8 +50,21 @@
 	<string>1.1.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb310883612397455</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.1.3</string>
+	<key>FacebookAppID</key>
+	<string>310883612397455</string>
+	<key>FacebookDisplayName</key>
+	<string>testapp</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIFileSharingEnabled</key>

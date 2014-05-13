@@ -91,7 +91,7 @@
 #pragma mark UIApplicationDelegate methods
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
+{   NSLog(@"%@",url);
 	return [[DocumentsUpdate sharedInstance] handleOpenURL:url];
 }
 
@@ -104,7 +104,7 @@
     startViewController *viewController = [[startViewController alloc]initWithNibName:@"startViewController" bundle:nil];
     UINavigationController *navCon=[[UINavigationController alloc] initWithRootViewController:viewController];
    // self.window.rootViewController = navCon;
-    self.SendViewController=[[sendViewController alloc] initWithNibName:@"SendViewController" bundle:nil];
+    //self.SendViewController=[[sendViewController alloc] initWithNibName:@"SendViewController" bundle:nil];
     [self registerAppDefaults]; // Register various application settings defaults
 
 	[self prePopulateCoreData]; // Pre-populate Core Data store with various default objects
@@ -214,16 +214,24 @@
 
 	[[DocumentsUpdate sharedInstance] queueDocumentsUpdate]; // Queue a documents update
 }
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    // attempt to extract a token from the url
-    return [FBAppCall handleOpenURL:url
-                  sourceApplication:sourceApplication
-                    fallbackHandler:^(FBAppCall *call) {
-                        NSLog(@"In fallback handler");
-                    }];
-}
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation {
+//    NSLog(@"File path:%@\nFrom: %@\nAnnotation:%@", url, sourceApplication, annotation);
+//    
+//    NSString *content = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+//    
+//    NSLog(@"File content:\n%@", content);
+//    
+//    return YES;
+//    // attempt to extract a token from the url
+//    return [FBAppCall handleOpenURL:url
+//                  sourceApplication:sourceApplication
+//                    fallbackHandler:^(FBAppCall *call) {
+//                        NSLog(@"In fallback handler");
+//                    }];
+//}
+//если подключить работает фэйсбук но не работает открытие файла!!!!!!!!!
 
 @end

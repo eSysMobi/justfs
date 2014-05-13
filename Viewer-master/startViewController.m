@@ -9,6 +9,17 @@
 #import "startViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "LibraryViewController.h"
+#import "ReaderConstants.h"
+#import "LibraryViewController.h"
+#import "LibraryDirectoryView.h"
+#import "LibraryDocumentsView.h"
+#import "ReaderViewController.h"
+#import "ReaderThumbCache.h"
+#import "CoreDataManager.h"
+#import "DocumentsUpdate.h"
+#import "DocumentFolder.h"
+#import "ReaderDocument.h"
+#import "CGPDFDocument.h"
 
 @interface startViewController () <FBLoginViewDelegate>
 

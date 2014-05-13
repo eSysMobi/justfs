@@ -11,6 +11,7 @@
 #import "sendViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "LibraryViewController.h"
+
 @class vkLoginViewController;
 @class sendViewController;
 @class LibraryViewController;

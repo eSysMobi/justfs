@@ -143,7 +143,7 @@
 			readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 			readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
 
-			[self presentViewController:readerViewController animated:NO completion:NULL];
+			[self.navigationController presentViewController:readerViewController animated:NO completion:NULL];
 		}
 	}
 }
