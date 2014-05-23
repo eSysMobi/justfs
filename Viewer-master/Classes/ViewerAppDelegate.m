@@ -91,8 +91,17 @@
 #pragma mark UIApplicationDelegate methods
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{   NSLog(@"%@",url);
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // attempt to extract a token from the url
+//    return [FBAppCall handleOpenURL:url
+//                  sourceApplication:sourceApplication
+//                    fallbackHandler:^(FBAppCall *call) {
+//                        NSLog(@"In fallback handler");
+//                    }];
+  NSLog(@"%@",url);
 	return [[DocumentsUpdate sharedInstance] handleOpenURL:url];
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -214,24 +223,17 @@
 
 	[[DocumentsUpdate sharedInstance] queueDocumentsUpdate]; // Queue a documents update
 }
-//- (BOOL)application:(UIApplication *)application
-//            openURL:(NSURL *)url
-//  sourceApplication:(NSString *)sourceApplication
-//         annotation:(id)annotation {
-//    NSLog(@"File path:%@\nFrom: %@\nAnnotation:%@", url, sourceApplication, annotation);
-//    
-//    NSString *content = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-//    
-//    NSLog(@"File content:\n%@", content);
-//    
-//    return YES;
-//    // attempt to extract a token from the url
-//    return [FBAppCall handleOpenURL:url
-//                  sourceApplication:sourceApplication
-//                    fallbackHandler:^(FBAppCall *call) {
-//                        NSLog(@"In fallback handler");
-//                    }];
-//}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                    fallbackHandler:^(FBAppCall *call) {
+                        NSLog(@"In fallback handler");
+                    }];
+}
 //если подключить работает фэйсбук но не работает открытие файла!!!!!!!!!
 
 @end

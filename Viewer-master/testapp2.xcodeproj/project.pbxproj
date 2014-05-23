@@ -21,7 +21,6 @@
 		40B5EC3B190E448E00EF86CD /* sendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B5EC33190E448E00EF86CD /* sendViewController.m */; };
 		40B5EC3C190E448E00EF86CD /* sendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B5EC34190E448E00EF86CD /* sendViewController.xib */; };
 		40B5EC3D190E448E00EF86CD /* vk_button_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 40B5EC35190E448E00EF86CD /* vk_button_medium.png */; };
-		40B5EC3F190E44EB00EF86CD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B5EC3E190E44EB00EF86CD /* XCTest.framework */; };
 		40B5EC41190E450000EF86CD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B5EC40190E450000EF86CD /* FacebookSDK.framework */; };
 		40B5EC44190E62E100EF86CD /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B5EC43190E62E100EF86CD /* LibraryViewController.m */; };
 		451258FD142B8871009BCAF5 /* FoldersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 451258EF142B8871009BCAF5 /* FoldersViewController.m */; };
@@ -127,7 +126,6 @@
 		40B5EC33190E448E00EF86CD /* sendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendViewController.m; sourceTree = "<group>"; };
 		40B5EC34190E448E00EF86CD /* sendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sendViewController.xib; sourceTree = "<group>"; };
 		40B5EC35190E448E00EF86CD /* vk_button_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vk_button_medium.png; sourceTree = "<group>"; };
-		40B5EC3E190E44EB00EF86CD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCTest.framework; sourceTree = "<group>"; };
 		40B5EC40190E450000EF86CD /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		40B5EC42190E62E100EF86CD /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
 		40B5EC43190E62E100EF86CD /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				40B5EC41190E450000EF86CD /* FacebookSDK.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
 				459A799C13413941009639D8 /* ImageIO.framework in Frameworks */,
-				40B5EC3F190E44EB00EF86CD /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				40B5EC40190E450000EF86CD /* FacebookSDK.framework */,
-				40B5EC3E190E44EB00EF86CD /* XCTest.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
